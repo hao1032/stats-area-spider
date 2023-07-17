@@ -7,6 +7,7 @@
 `pip install -r requirements.txt`
 
 依赖的库 `requests` `beautifulsoup4` `lxml`
+
 2. 修改 data.json
 
 如果是首次执行，且 data.json 有问题，需要修改文件内容为
@@ -29,4 +30,5 @@ children 下级区域列表
 ```
 
 如果是执行中途中断，不用修改改文件，重新执行脚本会按照当前进度继续抓取。
+
 3. 执行脚本
