@@ -87,23 +87,22 @@ class Main(object):
             node['children'] = children
             node['status'] = 'finish'  # 标记抓取完成
 
-    def find_start_node(self, node):
+    def find_start_node(self, data):
         """
         通过递归找到一个尚未抓取的 node
-        :param node:
+        :param data:
         :return:
         """
-        if isinstance(node, dict):
-            if node['status'] == 'start':
-                return node
-            for key, value in node.items():
-                result = self.find_start_node(value)
-                if result is not None:
-                    return result
-        elif isinstance(node, list):
-            for item in node:
+        if isinstance(data, dict):
+            if data['status'] == 'start':
+                return data
+            result = self.find_start_node(data['children'])
+            if result:
+                return result
+        elif isinstance(data, list):
+            for item in data:
                 result = self.find_start_node(item)
-                if result is not None:
+                if result:
                     return result
         return None
 
