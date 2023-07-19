@@ -20,7 +20,7 @@ class Main(object):
             resp.encoding = 'utf-8'
         except requests.exceptions.RequestException as e:
             print(f'error: {e}')
-            return '<html></html>'  # 遇到错误返回空，后面会再次处理没有抓取的情况
+            return '<html></html>'  # 遇到错误返回空，没有结果，不会标记 finish，后面还会再次抓取
         return resp.text
 
     def get_children_province(self, bs, url):
