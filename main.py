@@ -123,6 +123,7 @@ class Main(object):
                 # 抓取一个 node 后，保存数据
                 self.handle_node(node)
             else:
+                self.save_data_file()  # 结束后保存
                 break
 
             # 每隔一段时间保存一次，5 分钟
