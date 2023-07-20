@@ -1,5 +1,6 @@
 # stats-area-spider
 中国国家统计局行政区划代码爬虫
+http://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2022/index.html
 
 ## 一些数据
 | 年份   | 省   | 市   | 区    | 镇     | 村      |
@@ -7,6 +8,9 @@
 | 2022 | 31  | 342 | 3338 | 42508 | 618267 |
 
 data.json-2022.zip 解压后 json 为 279 MB
+
+山东省/潍坊市/坊子区/太保庄街道,共有 168 个村
+http://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2022/37/07/04/370704008.html
 
 ## 使用方式
 1. 安装依赖包
