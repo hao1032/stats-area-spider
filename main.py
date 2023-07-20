@@ -64,6 +64,7 @@ class Main(object):
             child = {
                 'code': table_tds[0].get_text().strip(),
                 'name': table_tds[-1].get_text().strip(),  # 省市区镇有 2 列，村有 3 列，使用 -1 获取名称
+                'sort': table_tds[1].get_text().strip() if len(table_tds) == 3 else '',  # 城乡分类代码
                 'url': url,
                 'status': "start" if url else 'finish',  # 如果没有链接，标记完成
                 'children': []
