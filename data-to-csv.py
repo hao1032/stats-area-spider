@@ -8,8 +8,16 @@ import json
 # 110101000000,110100000000,110101000000,东城区,东城区,3,1
 # 110101001000,110101000000,110101001000,东华门街道,东华门街道,4,1
 
+stats = {}  # 统计每个层级分别有多少个
+# {0: 1, 1: 31, 2: 342, 3: 3064, 4: 42505, 5: 616906} 1:省 5：村
 
-def convert_to_csv(data, parent_id=0, level=1):
+
+def convert_to_csv(data, parent_id=0, level=0):
+    if level in stats:
+        stats[level] += 1
+    else:
+        stats[level] = 1
+
     csv_rows = []
     children = data.get('children', [])
     if level == 3:  # 打印区级信息，观察进度
@@ -28,7 +36,7 @@ def convert_to_csv(data, parent_id=0, level=1):
     return csv_rows
 
 
-with open('data.json', 'rb') as f:
+with open('data11.json', 'rb') as f:
     area_data = json.load(f)
     csv_data = convert_to_csv(area_data)
 
@@ -41,4 +49,5 @@ with open('data.json', 'rb') as f:
         writer.writerow(csv_headers)
         writer.writerows(csv_data)
 
-    print(f"数据已成功转换并保存到 {csv_file} 文件中。")
+    print(f'数据已成功转换并保存到 {csv_file} 文件中。')
+    print(f'各级数量: {stats}')
