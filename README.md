@@ -21,7 +21,7 @@ http://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2022/37/07/04/370704008.html
 
 2. 修改 data.json
 
-如果是首次执行，且 data.json 有问题，需要修改文件内容为
+如果是首次执行，确保 data.json 内容如下
 
 ```json
 {
@@ -31,14 +31,18 @@ http://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2022/37/07/04/370704008.html
     "status": "start",
     "children": []
 }
-
-字段说明：
-code     区划代码
-name     区划名称
-url      当前区域对应的页面地址
-status   爬虫状态标记 start【尚未抓取】 finish【抓取完成】
-children 下级区域列表
 ```
+
+```
+字段说明：
+code          区划代码
+name          区划名称
+sort          城乡分类代码，村级别有，其他层级应该没有
+url           当前区域对应的页面地址
+status        爬虫状态标记 start【尚未抓取】 finish【抓取完成】
+children      下级区域列表
+children-size 子节点数量
+````
 
 如果是执行中途中断，不用修改改文件，重新执行脚本会按照当前进度继续抓取。
 
