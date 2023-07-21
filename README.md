@@ -8,8 +8,6 @@ http://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2022/index.html
 | 2022 | 31  | 342 | 3338 | 42508 | 618267 |
 | 2021 | 31  | 342 | 3064 | 42505 | 616906 |
 
-data.json-2022.zip 解压后 json 为 279 MB
-
 山东省/潍坊市/坊子区/太保庄街道 有最多的村，共 168 个
 http://www.stats.gov.cn/sj/tjbz/tjyqhdmhcxhfdm/2022/37/07/04/370704008.html
 
